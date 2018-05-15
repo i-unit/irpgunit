@@ -58,11 +58,6 @@
      P testAllOK_4...
      P                 b                   export
      D                 pi
-
-     D assertFailEvt_v1...
-     D                 ds                  likeds(assertFailEvt_t) inz
-     D assertFailEvt_v2...
-     D                 ds                  likeds(assertFailEvtLong_t) inz
       /free
 
         assert(*on : 'OK: 1');
@@ -71,11 +66,7 @@
         aEqual( 'Hello' : 'Hello' );
 
         // Keine Fehler aufgetreten => OK.
-        assertFailEvt_v1 = getAssertFailEvt();
-        aEqual( *blank : assertFailEvt_v1.msg );
-
-        assertFailEvt_v2 = getAssertFailEvtLong();
-        aEqual( *blank : assertFailEvt_v2.msg );
+        aEqual( *blank : getAssertFailEvt() );
 
       /end-free
      P                 e
